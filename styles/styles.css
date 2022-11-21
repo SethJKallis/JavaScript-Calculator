@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: papayawhip;
+}
+
+.container {
+    background-color: lightgrey;
+    width: 50%;
+    height: 75%;
+    border: 2px solid #000;
+    border-radius: 1.5rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+#display-el{
+    border: 2px solid #000;
+    text-align: end;
+    font-size: 1.5em;
+    padding: 1em;
+    border-top-left-radius: 0.9em;
+    border-top-right-radius: 0.9em;
+    margin: auto;
+    grid-column: 1/-1;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+}
+
+button{
+    font-weight: 900;
+    border: 1px solid #000;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease 0s;
+}
+
+button:hover,
+#clear-el:hover,
+#divide-el:hover,
+#equal-el:hover,
+#multiply-el:hover,
+#minus-el:hover,
+#plus-el:hover,
+#openParenthesis:hover,
+#closedParenthesis:hover,
+#decimal-el:hover,
+#del-el:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+#clear-el{
+    background-color: darkgrey;
+    font-size: 1em;
+}
+
+#num0{
+    grid-column: 2/3;
+}
+
+#divide-el{
+    background-color: darkgrey;
+    font-size: 1.5em;
+}
+
+#equal-el{
+    background-color: darkgrey;
+    font-size: 1.5em;
+    border-bottom-right-radius: 0.90em;
+    grid-column: 4/5;
+    grid-row: 6/7;
+}
+
+#multiply-el{
+    background-color: darkgrey;
+    font-size: 2em;
+}
+
+#minus-el{
+    background-color: darkgrey;
+    font-size: 2em;
+}
+
+#plus-el{
+    background-color: darkgrey;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+#openParenthesis{
+    background-color: darkgrey;
+    font-size: 1.5em;
+    border-bottom-left-radius: 0.90em;
+    grid-row: 6/7;
+}
+
+#closedParenthesis{
+    background-color: darkgrey;
+    font-size: 1.5em;
+}
+
+#decimal-el{
+    background-color: darkgrey;
+    font-size: 1em;
+}
+
+#del-el{
+    background-color: darkgray;
+}
