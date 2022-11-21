@@ -1,6 +1,4 @@
 let display = document.getElementById(`display-el`)
-display.innerText = " "
-
 let numbers = [
   document.getElementById(`num1`),
   document.getElementById(`num2`),
@@ -22,7 +20,6 @@ let numbers = [
   document.getElementById(`equal-el`),
   document.getElementById(`del-el`)
 ]
-
 numbers.map( numberClicked => {
     numberClicked.addEventListener(`click`, (e) => {
         switch(e.target.innerText){
@@ -49,7 +46,6 @@ numbers.map( numberClicked => {
         }
     })
 })
-
 function clearAll(){
     display.innerHTML = " "
 }
