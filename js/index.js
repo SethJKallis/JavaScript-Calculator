@@ -1,5 +1,5 @@
-let display = document.getElementById(`display-el`);
-display.innerText = " ";
+let display = document.getElementById(`display-el`)
+display.innerText = " "
 
 let numbers = [
   document.getElementById(`num1`),
@@ -25,10 +25,6 @@ let numbers = [
 
 numbers.map( numberClicked => {
     numberClicked.addEventListener(`click`, (e) => {
-        // console.log(`clicked`);
-        // console.log(e);
-        // console.log(e.target);
-        // console.log(e.target.innerText);
         switch(e.target.innerText){
             case `DEL`:
                 if(display.innerText){
@@ -51,7 +47,7 @@ numbers.map( numberClicked => {
             default:
                  display.innerText += e.target.innerText
         }
-    });
+    })
 })
 
 function clearAll(){
