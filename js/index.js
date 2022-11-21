@@ -45,7 +45,7 @@ numbers.map( numberClicked => {
                 } 
                 }
                 catch{
-                    display.innerText = ''
+                    display.innerText = 'Err.'
                 }
                 break;
             default:
