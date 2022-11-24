@@ -39,7 +39,7 @@ numbers.map(numberClicked => {
                     else {
                         display.innerText = eval(display.innerText)
                         numChecker = [];
-                        numChecker.push(display.innerText.split(''))
+                        numChecker= [...display.innerText.split('')]
                         console.log(numChecker)
                     }
                 }
@@ -52,9 +52,9 @@ numbers.map(numberClicked => {
                     display.innerText = display.innerText;
                 }
                 else {
-                    
                     display.innerText += e.target.innerText
                     numChecker.push('.')
+                    console.log(numChecker)
                 }
                 break;
             case `*`:
