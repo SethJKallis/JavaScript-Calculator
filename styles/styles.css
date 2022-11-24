@@ -13,15 +13,17 @@ main{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-color: papayawhip;
+    background-image: linear-gradient(lightgrey, grey);
 }
 
 .container {
     background-color: lightgrey;
-    width: 50%;
+    width: 60%;
     max-width: 500px;
-    min-width: 290px;
+    min-width: 295px;
     height: 70%;
+    max-height: 700px;
+    min-height: 300px;
     border: 2px solid #000;
     border-radius: 1.5rem;
     display: grid;
