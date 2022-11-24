@@ -35,12 +35,10 @@ numbers.map(numberClicked => {
                 try {
                     if (display.innerText == "") {
                         display.innerText = ""
-                    }
-                    else {
+                    } else {
                         display.innerText = eval(display.innerText)
                         numChecker = [];
                         numChecker= [...display.innerText.split('')]
-                        console.log(numChecker)
                     }
                 }
                 catch {
@@ -50,11 +48,9 @@ numbers.map(numberClicked => {
             case `.`:
                 if (numChecker.includes(`.`)) {
                     display.innerText = display.innerText;
-                }
-                else {
+                } else {
                     display.innerText += e.target.innerText
                     numChecker.push('.')
-                    console.log(numChecker)
                 }
                 break;
             case `*`:
