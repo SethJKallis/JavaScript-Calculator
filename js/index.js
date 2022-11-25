@@ -19,7 +19,7 @@ numbers.forEach(numberClicked => {
                     if (input.innerText == "") {
                         input.innerText = ""
                     } else {
-                        input.innerText = eval(input.innerText)
+                        input.innerText = eval(input.innerText).toFixed(2)
                         numChecker = [];
                         numChecker= [...input.innerText.split('')]
                     }
