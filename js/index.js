@@ -1,55 +1,38 @@
-let display = document.getElementById(`display-el`)
-let numbers = [
-    document.getElementById(`num1`),
-    document.getElementById(`num2`),
-    document.getElementById(`num3`),
-    document.getElementById(`num4`),
-    document.getElementById(`num5`),
-    document.getElementById(`num6`),
-    document.getElementById(`num7`),
-    document.getElementById(`num8`),
-    document.getElementById(`num9`),
-    document.getElementById(`num0`),
-    document.getElementById(`decimal-el`),
-    document.getElementById(`plus-el`),
-    document.getElementById(`minus-el`),
-    document.getElementById(`multiply-el`),
-    document.getElementById(`divide-el`),
-    document.getElementById(`openParenthesis`),
-    document.getElementById(`closedParenthesis`),
-    document.getElementById(`equal-el`),
-    document.getElementById(`del-el`)
-]
+let input = document.getElementById(`input-el`);
+let numbers = document.querySelectorAll('button');
 let numChecker = []
-numbers.map(numberClicked => {
+numbers.forEach(numberClicked => {
     numberClicked.addEventListener(`click`, (e) => {
         switch (e.target.innerText) {
             case `DEL`:
-                console.log(e.target.innerText)
-                if (display.innerText) {
+                if (input.innerText) {
                     numChecker.pop()
-                    display.innerText = display.innerText.slice(0, -1)
+                    input.innerText = input.innerText.slice(0, -1)
                 }
                 break;
+                case `A/C`:
+                    input.innerHTML = ''
+                    numChecker = []
+                    break;
             case `=`:
                 try {
-                    if (display.innerText == "") {
-                        display.innerText = ""
+                    if (input.innerText == "") {
+                        input.innerText = ""
                     } else {
-                        display.innerText = eval(display.innerText)
+                        input.innerText = eval(input.innerText)
                         numChecker = [];
-                        numChecker= [...display.innerText.split('')]
+                        numChecker= [...input.innerText.split('')]
                     }
                 }
                 catch {
-                    display.innerText = 'Err.'
+                    input.innerText = 'Err.'
                 }
                 break;
             case `.`:
                 if (numChecker.includes(`.`)) {
-                    display.innerText = display.innerText;
+                    input.innerText = input.innerText;
                 } else {
-                    display.innerText += e.target.innerText
+                    input.innerText += e.target.innerText
                     numChecker.push('.')
                 }
                 break;
@@ -57,18 +40,14 @@ numbers.map(numberClicked => {
             case `/`:
             case `-`:
             case `+`:
-                if (display.innerText) {
-                    display.innerText += e.target.innerText
+                if (input.innerText) {
+                    input.innerText += e.target.innerText
                     numChecker = []
                 }
                 break;
             default:
-                display.innerText += e.target.innerText
+                input.innerText += e.target.innerText
                 numChecker.push(e.target.innerText)
         }
     })
 })
-function clearAll() {
-    display.innerHTML = "";
-    numChecker = []
-}
