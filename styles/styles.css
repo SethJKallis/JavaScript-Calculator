@@ -36,6 +36,7 @@ main{
     display: flex;
     justify-content: end;
     align-items: center;
+    text-align: end;
     padding-right: 1em;
     border: 2px solid #000;
     font-size: 1.5em;
