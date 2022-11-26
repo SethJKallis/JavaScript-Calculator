@@ -29,9 +29,7 @@ numbers.forEach(numberClicked => {
                 }
                 break;
             case `.`:
-                if (numChecker.includes(`.`)) {
-                    input.innerText = input.innerText;
-                } else {
+                if(!numChecker.includes(`.`)){
                     input.innerText += e.target.innerText
                     numChecker.push('.')
                 }
@@ -40,7 +38,7 @@ numbers.forEach(numberClicked => {
             case `/`:
             case `-`:
             case `+`:
-                if (input.innerText) {
+                if (!input.innerText.endsWith(e.target.innerText)) {
                     input.innerText += e.target.innerText
                     numChecker = []
                 }
@@ -48,6 +46,7 @@ numbers.forEach(numberClicked => {
             default:
                 input.innerText += e.target.innerText
                 numChecker.push(e.target.innerText)
+                console.log(numChecker)
         }
     })
 })
