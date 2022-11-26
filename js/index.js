@@ -19,21 +19,19 @@ numbers.forEach(numberClicked => {
                     if (input.innerText == "") {
                         input.innerText = ""
                     } else {
-                        input.innerText = eval((input.innerText)).toFixed(2)
+                        input.innerText = eval(input.innerText).toFixed(numChecker.toString().split('.')[1]?.length ?? 0)
                         numChecker = [];
                         numChecker= [...input.innerText.split('')]
                     }
                 }
                 catch {
                     input.innerText = 'Err.'
-                }
-                break;
+                } break;
             case `.`:
                 if(!numChecker.includes(`.`)){
                     input.innerText += e.target.innerText
                     numChecker.push('.')
-                }
-                break;
+                } break;
             case `*`:
             case `/`:
             case `-`:
@@ -41,12 +39,10 @@ numbers.forEach(numberClicked => {
                 if (!input.innerText.endsWith(e.target.innerText)) {
                     input.innerText += e.target.innerText
                     numChecker = []
-                }
-                break;
+                } break;
             default:
                 input.innerText += e.target.innerText
                 numChecker.push(e.target.innerText)
-                console.log(numChecker)
         }
     })
 })
